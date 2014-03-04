@@ -1,0 +1,17 @@
+[Desktop Entry]
+ServiceTypes=KonqPopupMenu/Plugin,video/x-flv
+Actions=ffplay;injectMetadata
+Icon=video-x-generic
+Type=Service
+X-KDE-Submenu=Flv Tools
+X-KDE-Priority=TopLevel
+
+[Desktop Action ffplay]
+Exec=ffplay %f
+Icon=arrow-right
+Name=play with ffplay
+
+[Desktop Action injectMetadata]
+Exec=notify-send -i "video-x-generic" "Finished injecting flv metadata" "$(yamdi -w -i '%f' -o '%f''yamdi' -x '%f''xml')"
+Icon=video-x-generic
+Name=Inject FLV metadata
